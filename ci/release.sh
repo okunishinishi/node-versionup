@@ -11,7 +11,7 @@ read -p ">> " answer
 case ${answer:0:1} in
     y|Y )
         ./bin/versionup -p "${BASE_DIR}" -l "micro" -a "1"
-        taggit
+        npm run taggit
         npm publish .
         git add . -A
         git commit -m 'Version up'
