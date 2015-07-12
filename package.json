@@ -1,5 +1,5 @@
 {
-    "name": "node-versionup",
+    "name": "versionup",
     "version": "1.0.1",
     "description": "Increment version number in package.json (or bower.json)",
     "main": "versionup.js",
