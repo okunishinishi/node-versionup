@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+/**
+ * CLI script for versionup.js
+ */
+
+"use strict";
+
+var program = require('commander'),
+    pkg = require('../package'),
+    versionup = require('../versionup.js');
+
+
+program
+    .version(pkg['version'])
+    .option('-p, --path <path>', "Project root path or json file path to work with.")
+    .option('-l, --level <level>', "Level to change. \"major\", \"minor\", or \"micro\". Default is \"micro\".")
+    .option('-a, --amount <amount>', "Amount to increment.")
+    .parse(process.argv);
+
+versionup(program, function (err) {
+    if (err) {
+        console.error(err);
+    }
+});
