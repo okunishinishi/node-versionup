@@ -7,20 +7,23 @@ versionup
 [![npm version][my_npm_budge_url]][my_npm_url]
 
 
-Tiny script to increment version number in package.json (or bower.json)
 
 For example, `{"version" : "1.0.0}` -> `{"version" : "1.0.1}`
 
 Usage
 ---------
 
-Just path your project root path to version up package.json (or bower.json).
+Call `versionup()` at project root path where `package.json` exists.
 
 ```javascript
 
 var versionup = require('versionup');
+
+// Increment version number in package.json (or bower.json).
 versionup({
-    path: '__your_project_root_path__'
+    // Options
+}, function (err) {
+    
 });
 
 ```

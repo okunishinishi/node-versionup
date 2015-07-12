@@ -10,7 +10,6 @@ var program = require('commander'),
     pkg = require('../package'),
     versionup = require('../versionup.js');
 
-
 program
     .version(pkg['version'])
     .option('-p, --path <path>', "Project root path or json file path to work with.")
