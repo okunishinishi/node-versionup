@@ -1,36 +1,36 @@
 {
-    "name": "versionup",
-    "version": "1.0.3",
-    "description": "Increment version number in package.json (or bower.json)",
-    "main": "versionup.js",
-    "bin": {
-        "versionup": "bin/versionup"
-    },
-    "scripts": {
-        "test": "nodeunit versionup_test.js",
-        "cover": "istanbul cover nodeunit versionup_test.js --dir coverage",
-        "report": "codeclimate-test-reporter < coverage/lcov.info"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/okunishinishi/node-versionup.git"
-    },
-    "author": {
-        "name": "Taka Okunishi",
-        "url": "http://okunishitaka.com"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/okunishinishi/node-versionup/issues"
-    },
-    "homepage": "https://github.com/okunishinishi/node-versionup#readme",
-    "dependencies": {
-        "async": "^1.3.0",
-        "codeclimate-test-reporter": "0.1.0",
-        "commander": "^2.8.1"
-    },
-    "devDependencies": {
-        "istanbul": "^0.3.17",
-        "nodeunit": "^0.9.1"
-    }
+  "name": "versionup",
+  "version": "1.0.4",
+  "description": "Increment version number in package.json (or bower.json)",
+  "main": "versionup.js",
+  "bin": {
+    "versionup": "bin/versionup"
+  },
+  "scripts": {
+    "test": "nodeunit versionup_test.js",
+    "cover": "istanbul cover nodeunit versionup_test.js --dir coverage",
+    "report": "codeclimate-test-reporter < coverage/lcov.info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okunishinishi/node-versionup.git"
+  },
+  "author": {
+    "name": "Taka Okunishi",
+    "url": "http://okunishitaka.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/okunishinishi/node-versionup/issues"
+  },
+  "homepage": "https://github.com/okunishinishi/node-versionup#readme",
+  "dependencies": {
+    "async": "^1.3.0",
+    "codeclimate-test-reporter": "0.1.0",
+    "commander": "^2.8.1"
+  },
+  "devDependencies": {
+    "istanbul": "^0.3.17",
+    "nodeunit": "^0.9.1"
+  }
 }

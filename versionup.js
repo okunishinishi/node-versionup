@@ -48,7 +48,8 @@ function _nextVersion(current, level, amount) {
 }
 
 function _rewrite(filename, data, callback) {
-    fs.writeFile(filename, JSON.stringify(data, null, 4), callback);
+    var indent = 2;
+    fs.writeFile(filename, JSON.stringify(data, null, indent), callback);
 }
 
 function _logVersionup(from, to, filepath) {
