@@ -39,20 +39,26 @@ Installation
 ---------
 
 ```bash
-$ npm install --save-dev
+$ npm install versionup  --save-dev
 ```
 
 
 Using with CLI
 ---------
 
+Install as a global module.
+
 ```bash
-$ npm install --g
+$ npm install versionup -g
 ```
+
+Then,
 
 ```bash
 $ versionup -p "${~/my_project}" -l "micro" -a "1"
 ```
+
+
 
 License
 -------
