@@ -3,6 +3,7 @@ versionup
 
 Tiny script to increment version number in package.json (or bower.json)
 
+For example, `{"version" : "1.0.0}` -> `{"version" : "1.0.1}`
 
 Usage
 ---------
