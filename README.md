@@ -66,5 +66,5 @@ This software is released under the [MIT License][my_license_url].
 [my_codeclimate_badge_url]: http://img.shields.io/codeclimate/github/okunishinishi/node-versionup.svg?style=flat
 [my_codeclimate_coverage_badge_url]: http://img.shields.io/codeclimate/coverage/github/okunishinishi/node-versionup.svg?style=flat
 [my_coverage_url]: http://okunishinishi.github.io/node-versionup/coverage/lcov-report
-[my_npm_url]: http://www.npmjs.org/package/coz
-[my_npm_budge_url]: http://img.shields.io/npm/v/coz.svg?style=flat
+[my_npm_url]: http://www.npmjs.org/package/versionup
+[my_npm_budge_url]: http://img.shields.io/npm/v/versionup.svg?style=flat
