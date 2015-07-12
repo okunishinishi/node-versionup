@@ -55,7 +55,7 @@ $ npm install versionup -g
 Then,
 
 ```bash
-$ versionup -p "${~/my_project}" -l "micro" -a "1"
+$ versionup -p "~/my_project" -l "micro" -a "1"
 ```
 
 
