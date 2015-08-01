@@ -49,7 +49,20 @@ function _nextVersion(current, level, amount) {
 
 function _rewrite(filename, data, callback) {
     var indent = 2;
-    fs.writeFile(filename, JSON.stringify(data, null, indent), callback);
+    async.series([
+        function (callback) {
+            fs.exists(filename, function (exists) {
+                if (exists) {
+                    fs.chmod(filename, '644', callback);
+                } else {
+                    callback();
+                }
+            });
+        },
+        function (callback) {
+            fs.writeFile(filename, JSON.stringify(data, null, indent), callback);
+        }
+    ], callback);
 }
 
 function _logVersionup(from, to, filepath) {
