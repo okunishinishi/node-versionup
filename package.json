@@ -1,6 +1,6 @@
 {
   "name": "versionup",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Increment version number in package.json (or bower.json)",
   "main": "versionup.js",
   "bin": {
