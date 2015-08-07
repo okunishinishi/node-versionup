@@ -11,6 +11,7 @@
 "use strict";
 
 var fs = require('fs'),
+    argx = require('argx'),
     path = require('path'),
     async = require('async');
 
@@ -75,7 +76,9 @@ function _logVersionup(from, to, filepath) {
 
 /** @lends versionup */
 function versionup(options, callback) {
-    options = options || {};
+    var args = argx(arguments);
+    callback = args.pop('function') || argx.noop;
+    options = args.pop('object') || {};
 
     var path = options.path || process.cwd(),
         level = String(options.level || 'micro').trim().toLowerCase(),

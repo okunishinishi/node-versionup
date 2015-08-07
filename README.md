@@ -6,7 +6,7 @@ versionup
 [![Code Coverage][my_codeclimate_coverage_badge_url]][my_codeclimate_url]
 [![npm version][my_npm_budge_url]][my_npm_url]
 
-
+Increment version number in package.json (or bower.json)
 
 For example, `{"version" : "1.0.0}` -> `{"version" : "1.0.1}`
 
@@ -16,6 +16,13 @@ Usage
 Call `versionup()` at project root path where `package.json` exists.
 
 ```javascript
+#!/usr/bin/env node
+
+/**
+ * This is an example to use versionup.
+ */
+
+"use strict";
 
 var versionup = require('versionup');
 
@@ -23,12 +30,11 @@ var versionup = require('versionup');
 versionup({
     // Options
 }, function (err) {
-    
+    /*...*/
 });
-
 ```
 
-Available options
+Options
 ---------
 
 | Key | Default | Description |
