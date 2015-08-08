@@ -1,19 +1,54 @@
 versionup
-====
+==========
 
-[![Build Status][my_travis_badge_url]][my_travis_url]
-[![Code Climate][my_codeclimate_badge_url]][my_codeclimate_url]
-[![Code Coverage][my_codeclimate_coverage_badge_url]][my_codeclimate_url]
-[![npm version][my_npm_budge_url]][my_npm_url]
+<!-- Badge Start -->
+<a name="badges"></a>
+
+[![Build Status][bd_travis_shield_url]][bd_travis_url]
+[![Code Climate][bd_codeclimate_shield_url]][bd_codeclimate_url]
+[![Code Coverage][bd_codeclimate_coverage_shield_url]][bd_codeclimate_url]
+[![npm Version][bd_npm_shield_url]][bd_npm_url]
+
+[bd_repo_url]: https://github.com/okunishinishi/node-versionup
+[bd_travis_url]: http://travis-ci.org/okunishinishi/node-versionup
+[bd_travis_shield_url]: http://img.shields.io/travis/okunishinishi/node-versionup.svg?style=flat
+[bd_license_url]: https://github.com/okunishinishi/node-versionup/blob/master/LICENSE
+[bd_codeclimate_url]: http://codeclimate.com/github/okunishinishi/node-versionup
+[bd_codeclimate_shield_url]: http://img.shields.io/codeclimate/github/okunishinishi/node-versionup.svg?style=flat
+[bd_codeclimate_coverage_shield_url]: http://img.shields.io/codeclimate/coverage/github/okunishinishi/node-versionup.svg?style=flat
+[bd_gemnasium_url]: https://gemnasium.com/okunishinishi/node-versionup
+[bd_gemnasium_shield_url]: https://gemnasium.com/okunishinishi/node-versionup.svg
+[bd_npm_url]: http://www.npmjs.org/package/versionup
+[bd_npm_shield_url]: http://img.shields.io/npm/v/versionup.svg?style=flat
+
+<!-- Badge End -->
+
+
+<!-- Description Start -->
+<a name="description"></a>
 
 Increment version number in package.json (or bower.json)
 
-For example, `{"version" : "1.0.0}` -> `{"version" : "1.0.1}`
+<!-- Description End -->
+
+
+
+<!-- Sections Start -->
+<a name="sections"></a>
+
+Installation
+-----
+
+```bash
+npm install versionup --save-dev
+```
 
 Usage
----------
+----
 
 Call `versionup()` at project root path where `package.json` exists.
+
+Version number will be incremented. (eg. `{"version" : "1.0.0}` -> `{"version" : "1.0.1}`)
 
 ```javascript
 #!/usr/bin/env node
@@ -32,7 +67,7 @@ versionup({
 }, function (err) {
     /*...*/
 });
-```
+````
 
 Options
 ---------
@@ -41,17 +76,7 @@ Options
 | --- | --- | --- |
 | path | process.cwd() | Project root path or json file path to work with. |
 | level| "micro" | Level to change. "major", "minor", or "micro". |
-| amount | 1 | Amount to increment. | 
-
-
-Installation
----------
-
-```bash
-$ npm install versionup  --save-dev
-```
-
-
+| amount | 1 | Amount to increment. |
 Using with CLI
 ---------
 
@@ -69,17 +94,16 @@ $ versionup -p "~/my_project" -l "micro" -a "1"
 
 
 
+<!-- Sections Start -->
+
+
+<!-- LICENSE Start -->
+<a name="license"></a>
+
 License
 -------
-This software is released under the [MIT License][my_license_url].
+This software is released under the [MIT License](https://github.com/okunishinishi/node-versionup/blob/master/LICENSE).
 
-[my_repo_url]: https://github.com/okunishinishi/node-versionup
-[my_travis_url]: http://travis-ci.org/okunishinishi/node-versionup
-[my_travis_badge_url]: http://img.shields.io/travis/okunishinishi/node-versionup.svg?style=flat
-[my_license_url]: https://github.com/okunishinishi/node-versionup/blob/master/LICENSE
-[my_codeclimate_url]: http://codeclimate.com/github/okunishinishi/node-versionup
-[my_codeclimate_badge_url]: http://img.shields.io/codeclimate/github/okunishinishi/node-versionup.svg?style=flat
-[my_codeclimate_coverage_badge_url]: http://img.shields.io/codeclimate/coverage/github/okunishinishi/node-versionup.svg?style=flat
-[my_coverage_url]: http://okunishinishi.github.io/node-versionup/coverage/lcov-report
-[my_npm_url]: http://www.npmjs.org/package/versionup
-[my_npm_budge_url]: http://img.shields.io/npm/v/versionup.svg?style=flat
+<!-- LICENSE End -->
+
+
