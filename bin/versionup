@@ -1,24 +1,43 @@
 #!/usr/bin/env node
 
 /**
- * CLI script for versionup.js
+ * Command line interface of versionup.
  */
 
 "use strict";
 
 var program = require('commander'),
     pkg = require('../package'),
-    versionup = require('../versionup.js');
+    versionup = require('../lib');
 
 program
     .version(pkg['version'])
-    .option('-p, --path <path>', "Project root path or json file path to work with.")
-    .option('-l, --level <level>', "Level to change. \"major\", \"minor\", or \"micro\". Default is \"micro\".")
-    .option('-a, --amount <amount>', "Amount to increment.")
-    .parse(process.argv);
+    .description(pkg['description'])
+    .option('-p, --path <path>', "Project root path or json file path to work with")
+    .option('-l, --level <level>', "Level to change. 'major', 'minor', or 'micro'.")
+    .option('-a, --amount <amount>', "Amount to increment.");
 
-versionup(program, function (err) {
+
+program.parse(process.argv);
+
+//=========================
+// Run main command
+//=========================
+
+versionup({
+    path: program.path,
+    level: program.level,
+    amount: program.amount
+}, _done);
+
+/** When command done. */
+function _done(err) {
     if (err) {
         console.error(err);
+        process.exit(1);
+    } else {
+        process.exit(0);
     }
-});
+}
+
+program.parse(process.argv);

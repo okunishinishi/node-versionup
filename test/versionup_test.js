@@ -5,11 +5,11 @@
 
 "use strict";
 
-var versionup = require('./versionup'),
+var versionup = require('../lib/versionup'),
     path = require('path'),
     fs = require('fs');
 
-var tmpPackageJson = path.resolve(__dirname, 'tmp/tmp-package-json-' + new Date().getTime() + '.json');
+var tmpPackageJson = path.resolve(__dirname, '../tmp/tmp-package-json-' + new Date().getTime() + '.json');
 
 exports.setUp = function (done) {
     var tmpDir = path.dirname(tmpPackageJson);
