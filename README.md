@@ -90,7 +90,7 @@ Options
 | Key | Default | Description |
 | --- | --- | --- |
 | path | process.cwd() | Project root path or json file path to work with |
-| level | 'micro' | Level to change. 'major', 'minor', or 'micro'. |
+| level | 'patch' | Level to change. 'major', 'minor', or 'patch'. |
 | amount | 1 | Amount to increment. |
 
 <!-- Section from "doc/readme/03.Options.md.hbs" End -->

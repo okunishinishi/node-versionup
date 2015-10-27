@@ -14,7 +14,7 @@ program
     .version(pkg['version'])
     .description(pkg['description'])
     .option('-p, --path <path>', "Project root path or json file path to work with")
-    .option('-l, --level <level>', "Level to change. 'major', 'minor', or 'micro'.")
+    .option('-l, --level <level>', "Level to change. 'major', 'minor', or 'patch'.")
     .option('-a, --amount <amount>', "Amount to increment.");
 
 
