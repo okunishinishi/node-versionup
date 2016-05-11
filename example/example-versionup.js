@@ -4,13 +4,13 @@
  * This is an example to use versionup.
  */
 
-"use strict";
+'use strict'
 
-var versionup = require('versionup');
+const versionup = require('versionup')
 
 // Increment version number in package.json (or bower.json).
 versionup({
-    // Options
-}, function (err) {
-    /*...*/
-});
+  // Options
+}).then(() => {
+  /* ... */
+})

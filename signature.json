@@ -16,7 +16,7 @@
       "name": "level",
       "short": "l",
       "type": "string",
-      "desc": "Level to change. 'major', 'minor', or 'patch'.",
+      "desc": "Level to change. \"major\", \"minor\", or \"patch\".",
       "default": "'patch'"
     },
     {

@@ -1,69 +1,66 @@
 /**
  * Test for versionup.js
- * Runs with nodeunit
+ * Runs with mocha
  */
 
-"use strict";
+'use strict'
 
-var versionup = require('../lib/versionup'),
-    path = require('path'),
-    fs = require('fs');
+const versionup = require('../lib/versionup')
+const path = require('path')
+const fs = require('fs')
+const co = require('co')
+const assert = require('assert')
 
-var tmpPackageJson = path.resolve(__dirname, '../tmp/tmp-package-json-' + new Date().getTime() + '.json');
+const tmpPackageJson = path.resolve(__dirname, '../tmp/tmp-package-json-' + new Date().getTime() + '.json')
 
-exports.setUp = function (done) {
-    var tmpDir = path.dirname(tmpPackageJson);
+describe('versionup', function () {
+  before(() => co(function * () {
+    let tmpDir = path.dirname(tmpPackageJson)
     if (!fs.existsSync(tmpDir)) {
-        fs.mkdirSync(tmpDir);
+      fs.mkdirSync(tmpDir)
     }
     fs.writeFileSync(tmpPackageJson, JSON.stringify({
-        version: '1.0.1'
-    }));
-    done();
-};
+      version: '1.0.1'
+    }))
+  }))
 
-exports.tearDown = function (done) {
-    fs.unlinkSync(tmpPackageJson);
-    done();
-};
+  after(() => co(function * () {
+    fs.unlinkSync(tmpPackageJson)
+  }))
 
-exports['Do major versionup.'] = function (test) {
-    versionup({
-        path: tmpPackageJson,
-        level: 'major'
-    }, function (err) {
-        test.ifError(err);
-        test.done();
-    });
-};
-
-exports['Do minor versionup.'] = function (test) {
-    versionup({
-        path: tmpPackageJson,
-        level: 'minor',
-        amount: 2
-    }, function (err) {
-        test.ifError(err);
-        test.done();
-    });
-};
-
-exports['Do micro versionup.'] = function (test) {
-    versionup({
-        path: tmpPackageJson,
-        level: 'micro',
-        amount: 4
-    }, function (err) {
-        test.ifError(err);
-        test.done();
-    });
-};
-
-exports['Do version up with invalid path.'] = function (test) {
-    versionup({
-        path: '__invalid_path__'
-    }, function (err) {
-        test.ok(!!err);
-        test.done();
+  it('Do major versionup.', () => co(function * () {
+    yield versionup({
+      path: tmpPackageJson,
+      level: 'major'
     })
-};
+  }))
+
+  it('Do minor versionup.', () => co(function * () {
+    yield versionup({
+      path: tmpPackageJson,
+      level: 'minor',
+      amount: 2
+    })
+  }))
+
+  it('Do micro versionup.', () => co(function * () {
+    yield versionup({
+      path: tmpPackageJson,
+      level: 'micro',
+      amount: 4
+    })
+  }))
+
+  it('Do version up with invalid path.', () => co(function * () {
+    try {
+
+      yield versionup({
+        path: '__invalid_path__'
+      })
+    } catch (e) {
+      assert.ok(!!e)
+    }
+  }))
+})
+
+/* global describe, before, after, it */

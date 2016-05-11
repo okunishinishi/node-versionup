@@ -1,42 +1,43 @@
 /**
  * Test for versionup.js bin.
- * Runs with nodeunit
+ * Runs with mocha
  */
 
-"use strict";
+'use strict'
 
-var bin = require.resolve('../bin/versionup'),
-    cp = require('child_process'),
-    path = require('path'),
-    fs = require('fs');
+const bin = require.resolve('../bin/versionup')
+const cp = require('child_process')
+const co = require('co')
+const path = require('path')
+const fs = require('fs')
 
-var tmpPackageJson = path.resolve(__dirname, '../tmp/tmp-package-json-' + new Date().getTime() + '.json');
+const tmpPackageJson = path.resolve(__dirname, '../tmp/tmp-package-json-' + new Date().getTime() + '.json')
 
-exports.setUp = function (done) {
-    var tmpDir = path.dirname(tmpPackageJson);
+describe('bin', function () {
+  before(() => co(function * () {
+    let tmpDir = path.dirname(tmpPackageJson)
     if (!fs.existsSync(tmpDir)) {
-        fs.mkdirSync(tmpDir);
+      fs.mkdirSync(tmpDir)
     }
     fs.writeFileSync(tmpPackageJson, JSON.stringify({
-        version: '4.0.1'
-    }));
-    done();
-};
+      version: '4.0.1'
+    }))
+  }))
 
-exports.tearDown = function (done) {
-    fs.unlinkSync(tmpPackageJson);
-    done();
-};
+  after(() => co(function * () {
+    fs.unlinkSync(tmpPackageJson)
+  }))
 
-exports['Do major versionup.'] = function (test) {
-    cp.exec(bin + ' -l "major" -p ' + tmpPackageJson, function (err, stdout, stderr) {
-        test.ifError(err);
-        if (stdout) {
-            console.log(stdout);
-        }
-        if (stderr) {
-            console.error(stderr);
-        }
-        test.done();
-    });
-};
+  it('Do major versionup.', () => co(function * () {
+    let stdout = yield new Promise((resolve, reject) =>
+      cp.exec(bin + ' -l "major" -p ' + tmpPackageJson, (err, stdout, stderr) =>
+        err ? reject(err) : resolve(stdout)
+      )
+    )
+    if (stdout) {
+      console.log(stdout)
+    }
+  }))
+})
+
+/* global describe, before, after, it */
