@@ -2,12 +2,13 @@
   "name": "versionup",
   "version": "2.0.3",
   "description": "Increment version number in package.json (or bower.json)",
-  "main": "lib",
+  "main": "shim/node",
   "bin": {
     "versionup": "bin/versionup"
   },
   "scripts": {
-    "test": "./ci/test.js"
+    "test": "node ./ci/test.js",
+    "prepublish": "node ./ci/build.js && node ./ci/shim.js"
   },
   "repository": "okunishinishi/node-versionup",
   "author": {
@@ -27,10 +28,13 @@
   "homepage": "https://github.com/okunishinishi/node-versionup#readme",
   "dependencies": {
     "argx": "^3.0.0",
+    "babel-runtime": "^6.11.6",
     "co": "^4.6.0",
     "commander": "^2.9.0"
   },
   "devDependencies": {
+    "ababel": "^1.1.9",
+    "ababel-es2015": "^1.0.8",
     "amocha": "^1.0.10",
     "ape-releasing": "^4.0.4",
     "ape-reporting": "^3.0.1",
@@ -40,7 +44,7 @@
     "coz": "^6.0.15"
   },
   "engines": {
-    "node": ">=6",
-    "npm": ">=3"
+    "node": ">=4",
+    "npm": ">=2"
   }
 }
