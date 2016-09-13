@@ -1,6 +1,6 @@
 {
   "name": "versionup",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Increment version number in package.json (or bower.json)",
   "main": "shim/node",
   "bin": {

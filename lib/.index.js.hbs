@@ -7,13 +7,10 @@
 'use strict'
 
 const versionup = require('./versionup.js')
-const pkg = require('../package.json')
-
 const lib = versionup.bind(versionup)
 
 Object.assign(lib, versionup, {
-  versionup,
-  version: pkg.version,
+  versionup
 })
 
 module.exports = lib
