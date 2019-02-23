@@ -63,7 +63,7 @@ function _rewriteJson2() {
             return _context.stop();
         }
       }
-    }, _callee, this);
+    }, _callee);
   }));
   return _rewriteJson2.apply(this, arguments);
 }

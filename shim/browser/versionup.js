@@ -148,7 +148,7 @@ function _versionup() {
             return _context.stop();
         }
       }
-    }, _callee, this, [[14, 30, 34, 42], [35,, 37, 41]]);
+    }, _callee, null, [[14, 30, 34, 42], [35,, 37, 41]]);
   }));
   return _versionup.apply(this, arguments);
 }
