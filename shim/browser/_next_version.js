@@ -11,7 +11,7 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 
 function _nextVersion(current, level, amount) {
   var _String$split = String(current).split('-'),
-      _String$split2 = (0, _slicedToArray2.default)(_String$split, 2),
+      _String$split2 = (0, _slicedToArray2["default"])(_String$split, 2),
       value = _String$split2[0],
       preRelease = _String$split2[1];
 

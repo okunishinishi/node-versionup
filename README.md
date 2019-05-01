@@ -110,7 +110,7 @@ Options
 
 <!-- Section from "doc/guides/04.CLI.md.hbs" Start -->
 
-<a name="section-doc-guides-04-c-l-i-md"></a>
+<a name="section-doc-guides-04-cli-md"></a>
 
 Using with CLI
 ---------
